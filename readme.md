@@ -2,20 +2,45 @@
 ![](https://img.shields.io/badge/code%20style-black-000000.svg)
 ![](https://img.shields.io/badge/license-MIT-blue)
 
-# QuickScore
-Lightning-fast behavioral scoring tool.
+# Event Detection
+Validate, discard, or adjust pre-detected movements.
 
 <img src="assets/screenshot.jpeg" alt="interface" width=600 />
 
-## About
-Scoring behavior is time-consuming. Verifying pre-identified behavior is much faster.
-
-This application takes 1) video, 2) event timestamps, and 3) a timeseries. The video is then clipped into 1-s 
+The app takes 1) video, 2) event timestamps, and 3) a timeseries. The video is then clipped into 1-s 
 segments for faster scoring.
 
-This application took my behavioral scoring from several hours to ~20 minutes per subject.
+**This app is designed to make extensive use of hotkeys**. Use them until they are second nature.
 
-**Hotkeys are paramount here**. Go slow until they are second nature.
+## Hotkeys
+
+```
+# Files
+1: Open Video
+2: Open Events
+3: Open Timeseries
+
+# Playback
+Left Arrow: Previous Event
+Right Arrow: Next Event
+Right Mouse Click: Next Event (recommended: keeps your right hand on the mouse for time adjustments)
+Space: Replay current event
+Alt: Hold and drag the center line to create a new event
+
+# Playback Speed
+Comma: 1x Speed
+Period: 0.5x Speed
+Slash: 0.25x Speed
+
+# Events
+F: Flag event
+D: Discard event
+
+# Labels
+Shift: Open label editor
+Tab: Toggle L/R prefix
+Enter: Finishes the autocomplete (e.g., "fo" + Enter -> "foot"), saves the label, closes the editor
+```
 
 ## Installation
 
@@ -61,36 +86,3 @@ be changed [here](app/views/label_view.py#L49). Click `Enter` to save the label.
 
 ### Save Results
 Saving is performed automatically with every operation.
-
-### Hotkeys
-
-```
-# Files
-1: Open Video
-2: Open Events
-3: Open Timeseries
-
-# Playback
-Left Arrow: Previous Event
-Right Arrow: Next Event
-Right Mouse Click: Next Event
-Space: Replay current event
-Alt: Hold and drag the center line to create a new event
-
-# Playback Speed
-Comma: 1x Speed
-Period: 0.5x Speed
-Slash: 0.25x Speed
-
-# Events
-F: Flag event
-D: Discard event
-
-# Labels
-Shift: Open label editor
-Tab: Toggle L/R prefix
-Enter: Save label and close editor
-```
-
-## License
-QuickScore is distributed under the MIT License.
